@@ -25,8 +25,8 @@ Se realizaron los ejercicios de Fetch-Decode-Execute
 ## - Identifica una instrucción que use la ALU y explica qué hace.
 ###- ¿Para qué sirve el registro PC?
 El registro PC sirve para seguir hacía el siguiente adress del computador. --- ESTA SE PUEDE MEJORAR
-###- ¿Cuál es la diferencia entre @i y @READKEYBOARD?
-###- Describe qué se necesita para leer el teclado y mostrar información en la pantalla.
+### - ¿Cuál es la diferencia entre @i y @READKEYBOARD?
+### - Describe qué se necesita para leer el teclado y mostrar información en la pantalla.
 Para leer el teclado hay que ir hasta el adress 24576 (que contiene el teclado) y guardar en un registro D el contenido de este, el cual es igual al número de la tecla.
-###- Identifica un bucle en el programa y explica su funcionamiento.
-###- Identifica una condición en el programa y explica su funcionamiento.
+### - Identifica un bucle en el programa y explica su funcionamiento.
+### - Identifica una condición en el programa y explica su funcionamiento.
