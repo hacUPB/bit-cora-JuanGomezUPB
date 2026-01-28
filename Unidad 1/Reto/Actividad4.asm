@@ -8,10 +8,13 @@ D;JLT //D<0
 M=0
 0;JMP
 
-(MENOR)
-D;JGE //D=>0 
+(MENOR) 
 @7
 M=1
+
+(END)
+@END
+0;JMP
 
 
 
