@@ -4,8 +4,11 @@
 ![alt text](../Imágenes/Actividad3-Hack1.png)
 2. Para solucionar el error hice pequeños cambios en el código. El más importante fue que lo escribí en una clase de "secuencia", en la que primero se pregunta si la tecla presionada es distanta a "d" o "i", luego se pregunta si es distinta a "d" y de serlo se asume que es "i".
 ![alt text](../Imágenes/Actividad3-Codigo2.png)
-3. El problema a solucionar ahora, era que se borrara la línea, que se había dibujado anteriormente, cuando presionara la otra tecla. Esto se soluciono haciendo que la dirección RAM de la derecha o izquierda se borrará cada vez que se dibujaba la línea en el lado opuesto. El problema es que esto se hizo de manera "manual", directamente igualando el contenido la dirección de la RAM a 0. Es decir, el programa solo era funcional mientras la línea se moviera en una dirección a la derecha o izquierda.
-
-4. 
+3. El problema a solucionar ahora, era que se borrara la línea, que se había dibujado anteriormente, cuando presionara la otra tecla. Esto se soluciono haciendo que la dirección RAM de la derecha o izquierda se borrará cada vez que se dibujaba la línea en el lado opuesto. El problema es que esto se hizo de manera "manual", directamente igualando el contenido la dirección de la RAM a 0. Es decir, el programa solo era funcional mientras la línea se moviera solo una dirección a la derecha o izquierda.
+![alt text](../Imágenes/Actividad3-Codigo3.png)
+4. Para el resultado final, escribí un código en el que la posición de la línea se guardara en la memoria @i, de forma que esa posición pudiera cambiar independientemente de su posición en la pantalla. Como se ve en el segundo pseudocódigo:
+![alt text](../Imágenes/Actividad3-Pseudocodigo.png)
+![alt text](../Imágenes/Actividad3-Codigo4.png)
+![alt text](../Imágenes/Actividad3-Hack3.png)
 
 # Actividad 4

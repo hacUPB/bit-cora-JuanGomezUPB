@@ -1,4 +1,9 @@
 @20496
+D=A 
+@i
+M=D
+
+@20496
 M=-1
 
 (READKEYBOARD)
@@ -8,29 +13,40 @@ D=M
 D;JEQ
 
 @105
-D=D-A 
+D=D-A
 @LEFT
 D;JEQ 
 @RIGHT
 D;JNE
 
 (LEFT)
-@20497 
+@i
+A=M
 M=0
-@20496
-M=0
-@20495
+A=A-1
 M=-1
+
+D=A 
+@i
+M=D
 @READKEYBOARD
 0;JMP
 
 (RIGHT)
-@20495
+@i
+A=M
 M=0
-@20496
-M=0
-@20497
+
+@i
+D=M 
+M=D+1
+
+A=M
 M=-1
+
+D=A 
+@i
+M=D
 @READKEYBOARD
 0;JMP
 
