@@ -1,0 +1,34 @@
+# Pseudocódigo Actividad 3
+## Primer pseudocódigo
+RAM [20496]= -1
+
+READKEYBOARD
+if KBD=0
+go to READKEYBOARD
+
+if KBD=105
+RAM[20496]=0
+RAM[20495]=-1
+
+if KBD=100
+RAM[20496]=0
+RAM[20497]=-1
+
+Go to READKEYBOARD
+
+## Primer pseudocódigo
+RAM [inicial]= -1
+
+READKEYBOARD
+if KBD=0
+go to READKEYBOARD
+
+if KBD=105
+RAM[anterior]=0
+RAM[anterior-1]=-1
+
+if KBD=100
+RAM[anterior]=0
+RAM[anterior+1]=-1
+
+Go to READKEYBOARD
