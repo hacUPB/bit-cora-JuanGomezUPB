@@ -10,5 +10,6 @@
 ![alt text](../Imágenes/Actividad3-Pseudocodigo.png)
 ![alt text](../Imágenes/Actividad3-Codigo4.png)
 ![alt text](../Imágenes/Actividad3-Hack3.png)
-
+5. Finalmente se encontró un ultimo error: el porgrama asume que toda tecla que no sea "i (105)" equvale a ir a la derecha. La solución fue crear una etiqueta nueva (TRANSICIÓN) que diferenciara la tecla ""d (100)" del resto.
+![alt text](../Imágenes/Actividad3-Codigo5.png)
 # Actividad 4
