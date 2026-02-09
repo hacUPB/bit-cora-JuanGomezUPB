@@ -31,7 +31,6 @@ D=D+1
 M=D
 @LOOP
 0;JMP
-
 (SUMA)
 @sum 
 D=M
