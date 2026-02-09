@@ -15,8 +15,7 @@ D=M
  
 @arr
 A=M
-M=D
- 
+M=D 
 D=D+1
 @j
 M=D
