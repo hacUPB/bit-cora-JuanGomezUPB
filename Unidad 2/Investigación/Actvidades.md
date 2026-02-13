@@ -10,7 +10,8 @@
 ![alt text](../Imágenes/Actividad3-Pseudocodigo.png)
 ![alt text](../Imágenes/Actividad3-Codigo4.png)
 ![alt text](../Imágenes/Actividad3-Hack3.png)
-
+5. Finalmente se encontró un ultimo error: el porgrama asume que toda tecla que no sea "i (105)" equvale a ir a la derecha. La solución fue crear una etiqueta nueva (TRANSICIÓN) que diferenciara la tecla ""d (100)" del resto.
+![alt text](../Imágenes/Actividad3-Codigo5.png)
 # Actividad 4
 1. En la primera parte de la actividad, p representa al puntero. El código lo escribí de modo que primero se crea la variable "a"; dirección 16 en la memoria RAM (en Hack). Luego "p" (dirección 17 en la memoria RAM) guarda la dirección "a" en su memoria. Guardé el valor de 20 en D y luego volví a llamar a "p", luego escribí que la dirección fuera la del valor de la memoria de "p", es decir "a". Ya en "a", iguale a M a D (M=D). Si todo esta correcto, la dirección 16 de la memoria RAM debería ser igual 20 y la dirección 17 debría ser igual a 16.
 ![alt text](../Imágenes/Actividad5-Referencia1.png)
