@@ -71,3 +71,16 @@ En **C#** el código crea el objeto original y le da sus atributos. Luego se est
 
 2. ¿Qué es `copia` en C++ y en C#? ¿Es una copia independiente de `original`?
 En **C++** una copia referencia al objeto original, le puede atribuir nuevas características o valores pero al final es independiente del objeto original, por otra parte en **C#** la copia es entregarle los valores del original a una copia y permitir que se modifiquen los valores de este mismo en un "nuevo objeto" pero igualmente los valores del original también van a cambiar.
+
+## Actividad integradora
+Predicción (sin ejecutar el código):
+1. ¿Cuál será la salida final en la consola de este programa?
+--> La salida final del programa va a mostrar: el valor de **a** va a ser igual, porque es una suma por valor. El valor **b** y **c** si van a cambiar como lo dice la suma, porque son sumas por referencia y por puntero. Por su parte, el contador, al ser estatico va a ir sumando de 1 en 1, es decir, aunque al principio de la función se declare que su valor es 0, como es un valor estatico se va seguir sumando de 1 en 1 y el valor final va a ser 3. 
+2. Escribe la salida completa que esperas.
+
+3. Dibuja un mapa de memoria conceptual de este programa justo antes de que main finalice. Debes indicar en qué segmento de memoria (Stack, Heap, Datos Globales/Estáticos, Código) se encontraría cada una de las siguientes variables: contador_global, contador_estatico, val_A, val_B, val_C (dentro de main), el parámetro a de la función sumaPorValor, la función main misma.
+B. Verificación y análisis (usando el depurador):
+Ejecuta el programa paso a paso (F10) con un breakpoint al inicio de main.
+1. Compara la salida real con tu predicción. Si hubo diferencias, explica por qué ocurrieron. Evidencia clave: capturas de pantalla antes y después de los puntos de interés (¿Cuáles son esos puntos? -> tu tarea analizarlo).
+2. Describe qué demuestran estas capturas sobre la diferencia entre los diferentes tipos de paso por parámetros analizados.
+3. Explica con tus propias palabras el comportamiento de contador_estatico. ¿Por qué “recuerda” su valor entre llamadas a la función ejecutarContador? ¿En qué se diferencia de una variable local normal?
