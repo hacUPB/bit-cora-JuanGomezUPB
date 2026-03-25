@@ -58,6 +58,7 @@ Hay un error de compilación porque el secret1 es privado y en el código estan 
 ## Programa 3
 // Actividad4Prueba4
 El código usa una instrucción llamada reinterpet_cast que le permite acceder a los atributos aunque sean privados. ***preguntar cómo***
+--> Entonces reinterpret_cast es la función más importante del código, porque permite romper el encapsulamiento privado de secret1, secret2 y secret3. Como secret1, secret2 y secret3 son parte de un objeto estan seguidos, por eso se escribe (***x + 1***).
 Los valores de MyClass entonces reemplazan a los originales (42,3.14f,"A")
 # Actividad 5
 **Concepto de herencia: la herencia es otro concepto fundamental en la programación orientada a objetos. Observa de nuevo en ofApp.h la clase `CircularExplosion`. Observa que esta clase hereda de la clase `ExplosionParticle` que a su vez hereda de la clase `Particle`.**
