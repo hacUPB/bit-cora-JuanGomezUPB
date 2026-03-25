@@ -45,15 +45,15 @@ Cada clase que tenga Explosion, va a representar una forma distinta de explosió
 - **Hipótesis:** Creo que en la memoria vamos a ver objetos sin valor ***(¿eso es posible?)*** esperando a que cuando se presione con el mouse se le den los valores de x y y. Probablemente los valores sean de 0.
 # Actividad 4
 ## Programa 1
-//Actividad4Prueba1
+![//Actividad4Prueba1](../Imágenes/Actividad4Prueba1.png)
 El programa no muestra ninguna información en pantalla, tampoco presenta errores de compilación.
-// Actividad4Prueba2
+![// Actividad4Prueba2](../Imágenes/Actividad4Prueba2.png)
 El programa presenta errores de compilación en las líneas 14 y 16 que son ***ac.protectedVar = 20;*** y ***ac.privateVar = 30;*** respectivamente. Lo primero que supongo es que se debe al encapsulamiento, ya que publicVar (en la línea 12) no muestra errores de compilación y su encapsulamiento es público.
 ***PREGUNTA PARA LA CLASE: si se esta llamando a la clase AccessControl en la línea 11, ¿por qué el protectedVar no sirve?***
 --> Si bien el obejto ac esta relacionado a AccessControl, al estar en la clase main no se puede editar, ya que la clase main no es herencia de la clase AccessControl.
 El privateVar siempre será un error de compilación porque solo podría usarse en la clase AccessControl.
 ## Programa 2
-// Actividad4Prueba3
+![// Actividad4Prueba3](../Imágenes/Actividad4Prueba3.png)
 Hay un error de compilación porque el secret1 es privado y en el código estan intentando acceder a él desde otra clase.
 ## Programa 3
 // Actividad4Prueba4
