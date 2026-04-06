@@ -38,7 +38,7 @@ La clase RisingParticle toma los métodos definidos anteriormente y define la po
 
 Cada clase que tenga Explosion, va a representar una forma distinta de explosión.
 
-***Depurar → Inspección rápida → &(nombre de variable)***
+***Depurar → Inspección rápida → &(nombre de variable)*** .
 ***Depurar → Ventanas → Memoria 1***
 
 # Actividad 3
