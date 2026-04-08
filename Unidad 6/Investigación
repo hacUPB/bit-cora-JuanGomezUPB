@@ -1,0 +1,81 @@
+refactoring.guru --> Patrones de diseño:
+
+# Actividad 1
+**State**: Los estados son comportamientos. Cada estado es una clase State
+
+**virtual** --> clase abstracta: el metodo no se va a utilizar en esa fase sino como una interfaz, sí se implementan en cada subclase.
+**Observer** --> son los usuarios que observan, quienes estan suscritos y a quienes se les notifica (notify) si estan suscritos.
+
+**class Particle** --> Solo se declara porque se construte despues.
+**class State** --> Patrón de diseño de los diferentes estados --> Esta es una clase abstracta, es decir no se va a implementar, solo sus subclases.
+
+**class Particle : public Observer** --> Hereda de observer
+  - ***override*** --> Llamandose igual el método se puede cambiar. Por ejemplo en algunas clases se heredan cosas y se quiere cambiar solo algo en especifico, se usa override.
+  - 
+
+ofApp.cpp:
+**assObserver:** Se añade el usuario
+**nOTIFY:** Se notifica un evento --> **Particle:onNotify:** Dependiendo de que evento, lo notifica, recorre os eventos a ver cualquier es.
+**Subject::Notify** --> 
+
+**Experimento:  que no se suscriban todas, se comenta la línea: addObserver(p) [de esa partícula en especifico].**
+
+**respuestas**
+1. Se puede interactuar presionando ciertas teclas. La tecla s detiene las particulasd en su sitio, la tecla n es la que los devuelve a su comportamiento original, r las repele de donde esta la flecha y a las lleva hacía donde está la flecha.
+2. No, hay tres clases de particulas son distintas, tienen distintos colores y viajan a distinta velocidad.
+3. 
+4. Cuando se presiona una tecla, se notifica a todas las particulas del evento que acaba de suceder. Una vez llega este evento, las particulas se susciben con el "addObserver", si esta última línea se comenta (o si directamente no existe) entonces no se estará suscribiendo, significa que esas particulas no se verán afectadas por el evento.
+
+# Actividad 2
+**Observable** --> La tienda
+
+1. **Identifica los Roles:**
+    - ¿Qué clase actúa como la interfaz `Observer`? ¿Qué método define?
+La clase Observer actúa como plantilla (que luego heredara particle). Los "virtual" la hacen "invisible", porque el método no se va a utilizar en esa clase.
+````
+class Observer {
+public:
+	virtual ~Observer() = default;
+	virtual void onNotify(const std::string& event) = 0;
+};
+````
+    - ¿Qué clase actúa como `Subject`? ¿Qué métodos proporciona para gestionar observadores y notificar?
+````
+class Subject {
+public:
+	void addObserver(Observer* observer);
+	void removeObserver(Observer* observer);
+protected:
+	void notify(const std::string& event);
+private:
+	std::vector<Observer*> observers;
+};
+````
+
+    - ¿Qué clase es el `ConcreteSubject` en esta aplicación? ¿Por qué? (Pista: ¿Quién *envía* las notificaciones?)
+
+    - ¿Qué clase(s) actúan como `ConcreteObserver`? ¿Por qué? (Pista: ¿Quién *recibe* y *reacciona* a las notificaciones?)
+class Particle : public Observer {
+public:
+	Particle();
+	~Particle() override;
+	Particle(const Particle&) = delete;
+	Particle& operator=(const Particle&) = delete;
+	void update();  void draw();
+	void onNotify(const std::string& event) override;
+	void setState(State* newState);
+	ofVec2f position;
+	ofVec2f velocity;
+	float size;
+	ofColor color;
+private:
+	void keepInsideWindow();
+	State* state;
+};
+2. **Sigue el flujo de notificación:**
+    - Localiza el método `keyPressed` en `ofApp.cpp`. ¿Qué sucede cuando se presiona la tecla ‘a’? ¿Qué método se llama?
+    - Ve al método `notify` en la clase `Subject`. ¿Qué hace este método?
+    - Localiza el método que implementa la interfaz `Observer` en la clase `Particle` (`onNotify`). ¿Qué hace este método cuando recibe el evento “attract”?
+3. **Registro y eliminación de observadores:**
+    - ¿En qué parte del código se añaden las instancias de `Particle` como observadores de `ofApp`? (Busca dónde se llama a `addObserver`).
+    - Aunque no se usa explícitamente en este ejemplo simple, ¿Dónde se eliminarían los observadores si fuera necesario (por ejemplo, si una partícula se destruyera durante la ejecución)? (Busca `removeObserver`). ¿Por qué es importante el destructor de `ofApp` en este contexto?
