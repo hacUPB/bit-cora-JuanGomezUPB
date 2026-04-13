@@ -180,7 +180,17 @@ Reporta en tu bitácora
 # Actividad 4
 1. **Identifica los componentes:**
     - ¿Cuál es la clase `Context`? ¿Qué miembro utiliza para mantener el estado actual?
+La clase Context es Particle, ya que mantiene una referencia al estado actual mediante el atributo State * state, delega su comportamiento al estado en el método update() y permite cambiar de estado mediante setState(). **Revisar esto**
     - ¿Cuál es la interfaz `State`? ¿Qué métodos importantes define? (Piensa en `update`, `onEnter`, `onExit`).
+
+class State {
+public:  
+		virtual ~State() = default;  
+		virtual void update(Particle * particle) = 0;  
+		virtual void onEnter(Particle * particle) { }  
+		virtual void onExit(Particle * particle) { }
+		};
+
     - Enumera las clases `ConcreteState`. ¿Qué comportamiento específico encapsula cada una?
 2. **Delegación del comportamiento:**
     - Observa el método `Particle::update()`. ¿Cómo delega la lógica de actualización al estado actual?
