@@ -164,5 +164,14 @@ Solo necesita la cadena de caracteres que define el tipo de partícula.
 Se añadiran las partículas desconocidas pero sin tamaño y color asignados, sino con un color y tamaño predeterminado.
 3. **Uso de Factory:**
     - Localiza `ofApp::setup`. ¿Cómo se utiliza la `ParticleFactory` para poblar el vector `particles`?
-
+````
+for (int i = 0; i < 100; ++i) {
+	Particle* p = ParticleFactory::createParticle("star");
+````
+Con el for, va a recorrer n cantidad de veces la función que se está llamndo. En el caso de star, 100 veces. Cada vez que pase va a crear una partícula nueva, en este caso, 100.
     - Compara esto con la alternativa: ¿Cómo se vería `ofApp::setup` si *no* usara la fábrica y tuviera que crear y configurar cada tipo de partícula (`star`, `shooting_star`, `planet`) directamente usando `new Particle()` y luego ajustando sus propiedades (`size`, `color`, `velocity`)?
+Reporta en tu bitácora
+1. Explica con tus propias palabras el propósito del patrón Factory Method (o Simple Factory, en este caso). ¿Qué problema principal aborda en la creación de objetos?
+2. ¿Qué ventajas aporta el uso de ParticleFactory en ofApp::setup en comparación con instanciar y configurar las partículas directamente allí? Piensa en términos de organización del código (SRP - Single Responsibility Principle), legibilidad y facilidad para añadir nuevos tipos de partículas en el futuro.
+3. Imagina que quieres añadir un nuevo tipo de partícula llamada "black_hole" que tiene tamaño grande, color negro y velocidad muy lenta. Describe los pasos que necesitarías seguir para implementar esto utilizando la ParticleFactory existente. ¿Tendrías que modificar ofApp::setup? ¿Por qué sí o por qué no?
+4. El método createParticle en el ejemplo es estático. ¿Qué implicaciones (ventajas/desventajas) tiene esto comparado con tener una instancia de ParticleFactory y un método de instancia createParticle()?.
