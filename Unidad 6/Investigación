@@ -125,6 +125,7 @@ ofApp::~ofApp() {
 	particles.clear();
 ````
 Acá se llama a removeObserver. Cuando se llama se borrá la particula (delete p;).
+
 # Actividad 3
 1. **Identifica la Factory:**
     - ¿Qué clase actúa como la factory en este ejemplo?
