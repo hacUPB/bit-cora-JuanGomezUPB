@@ -74,8 +74,95 @@ private:
 };
 2. **Sigue el flujo de notificación:**
     - Localiza el método `keyPressed` en `ofApp.cpp`. ¿Qué sucede cuando se presiona la tecla ‘a’? ¿Qué método se llama?
+Cuandose presiona la tecla "a", se notifica el "attract", lo cual cambia el estado a AtrractState.
+````
+void ofApp::keyPressed(int key) {
+	switch (key) {
+(...)
+	case 'a':
+		notify("attract");
+		break;
+(...)
+}
+````
     - Ve al método `notify` en la clase `Subject`. ¿Qué hace este método?
+El método notify recorre los observer y los notifica del nuevo evento, aquellas particulas que no esten en la lista (que no tengan *activo* el addObserver) no serán leídas puesto que no están en la lista.
     - Localiza el método que implementa la interfaz `Observer` en la clase `Particle` (`onNotify`). ¿Qué hace este método cuando recibe el evento “attract”?
+````
+void Particle::onNotify(const std::string& event) {
+	if (event == "attract") {
+		setState(new AttractState());
+````
+Cuando este método recibe el attract, cambia (instancia*) el estado a Attract State. Este evento se llama "attract". 
 3. **Registro y eliminación de observadores:**
     - ¿En qué parte del código se añaden las instancias de `Particle` como observadores de `ofApp`? (Busca dónde se llama a `addObserver`).
+````
+void ofApp::setup() {
+	ofBackground(0);
+	particles.reserve(100 + 5 + 10);
+	for (int i = 0; i < 100; ++i) {
+		Particle* p = ParticleFactory::createParticle("star");
+		particles.push_back(p);
+		addObserver(p);
+	}
+	for (int i = 0; i < 5; ++i) {
+		Particle* p = ParticleFactory::createParticle("shooting_star");
+		particles.push_back(p);
+		addObserver(p);
+	}
+	for (int i = 0; i < 10; ++i) {
+		Particle* p = ParticleFactory::createParticle("planet");
+		particles.push_back(p);
+		//addObserver(p);
+````
     - Aunque no se usa explícitamente en este ejemplo simple, ¿Dónde se eliminarían los observadores si fuera necesario (por ejemplo, si una partícula se destruyera durante la ejecución)? (Busca `removeObserver`). ¿Por qué es importante el destructor de `ofApp` en este contexto?
+````
+ofApp::~ofApp() {
+	for (Particle* p : particles) {
+		removeObserver(p);
+		delete p;
+	}
+	particles.clear();
+````
+Acá se llama a removeObserver. Cuando se llama se borrá la particula (delete p;).
+# Actividad 3
+1. **Identifica la Factory:**
+    - ¿Qué clase actúa como la factory en este ejemplo?
+````
+class ParticleFactory {
+public:
+	static Particle* createParticle(const std::string& type);
+};
+````
+Se llama la clase ParticleFactory, que creará un método que retornará un puntero tipo Particle, en el SetUp cuando se llame se le asignará un nombre por el tipo de partícula que se este creando.
+    - ¿Cuál es el “método factory” específico? ¿Es un método de instancia o estático?
+El método es CreateParticle y es estático.
+    - ¿Qué tipo de objeto devuelve este método fábrica?
+Un puntero del tipo Particle.
+2. **Proceso de creación:**
+    - Observa el método `ParticleFactory::createParticle`. ¿Cómo decide qué tipo de partícula específica crear y configurar?
+````
+void ofApp::setup() {
+	ofBackground(0);
+	particles.reserve(100 + 5 + 10);
+	for (int i = 0; i < 100; ++i) {
+		Particle* p = ParticleFactory::createParticle("star");
+		particles.push_back(p);
+		addObserver(p);
+````
+En el setUp, con la cadena de caracteres asignada al nombre de la partícula, en este caso "star" se estara enviando información del tipo partícula que se creará. Esto lleva a la siguiente función:
+````
+Particle* ParticleFactory::createParticle(const std::string& type) {
+	Particle* particle = new Particle();
+	if (type == "star") {
+		particle->size = ofRandom(2.0f, 4.0f);
+		particle->color = ofColor(255, 0, 0);
+````
+    - ¿Qué información necesita el método fábrica para realizar su trabajo?
+Solo necesita la cadena de caracteres que define el tipo de partícula.
+    - ¿Qué devuelve si se le pasa un tipo desconocido? ¿Cómo podrías mejorar esto?
+Se añadiran las partículas desconocidas pero sin tamaño y color asignados, sino con un color y tamaño predeterminado.
+3. **Uso de Factory:**
+    - Localiza `ofApp::setup`. ¿Cómo se utiliza la `ParticleFactory` para poblar el vector `particles`?
+
+    - Compara esto con la alternativa: ¿Cómo se vería `ofApp::setup` si *no* usara la fábrica y tuviera que crear y configurar cada tipo de partícula (`star`, `shooting_star`, `planet`) directamente usando `new Particle()` y luego ajustando sus propiedades (`size`, `color`, `velocity`)?
