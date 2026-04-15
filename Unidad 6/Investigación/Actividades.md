@@ -283,4 +283,4 @@ void Particle::setState(State* newState) {
 ````
 Dentro de "Particle::SetState" cuando se llama al método onEnter u onExit significa que se está entrando a un estado o saliendo de este respectivamente. Es decir, si se presiona la tecla especifica de un estado, el método onEnter hace que entre a un estado, mientras que el método onExit (cuando se presione otra tecla) va a eliminar el estado.
 - ¿Qué evento externo (mediado por el patrón Observer, que ya analizaste) desencadena la llamada a `setState` en una `Particle`?
-Cuando se presiona una tecla (onNotify)*revisar este*
+Cuando se presiona una tecla.
