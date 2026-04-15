@@ -229,15 +229,13 @@ El this es la particula que ya esta "seleccionada" y el update quiere decir que 
 particle->position += particle->velocity;
 ````
 Se suma la posición y velocidad y el movimiento de la particula es "libre."
-
-- AttractState::update()
 ````.cpp
+AttractState::update()
 steer(particle, mouse, 0.05f, 3.0f, 0.2f);
 ````
 Calcula dirección hacia el mouse y acelera en esa dirección
-
-RepelState::update()
 ````.cpp
+RepelState::update()
 ofVec2f away = particle->position - mouse;
 particle->velocity += away * 0.05f;
 ````
