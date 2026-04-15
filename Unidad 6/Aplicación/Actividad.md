@@ -1,4 +1,5 @@
 # Actividad 5
+**En esta actividad modificarás el caso de estudio para añadir un nuevo tipo de partícula que utiliza los patrones Observer, Factory y State.**
 
 1. El código fuente completo de tu proyecto openFrameworks.
 
