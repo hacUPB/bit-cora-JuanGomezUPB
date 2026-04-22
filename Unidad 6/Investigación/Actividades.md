@@ -23,8 +23,14 @@ ofApp.cpp:
 **respuestas**
 1. Se puede interactuar presionando ciertas teclas. La tecla s detiene las particulasd en su sitio, la tecla n es la que los devuelve a su comportamiento original, r las repele de donde esta la flecha y a las lleva hacía donde está la flecha.
 2. No, hay tres clases de particulas son distintas, tienen distintos colores y viajan a distinta velocidad.
-3. 
+3. Imágenes estado inicial, a, r, s, n (respectivamente):
+![alt text](<../Imágenes/Captura de pantalla 2026-04-08 105551.png>)
+![alt text](<../Imágenes/tecla a.png>)
+![alt text](<../Imágenes/tecla r.png>)
+![alt text](<../Imágenes/tecla s.png>)
+![alt text](<../Imágenes/tecla n.png>)
 4. Cuando se presiona una tecla, se notifica a todas las particulas del evento que acaba de suceder. Una vez llega este evento, las particulas se susciben con el "addObserver", si esta última línea se comenta (o si directamente no existe) entonces no se estará suscribiendo, significa que esas particulas no se verán afectadas por el evento.
+![alt text](<../Imágenes/Pregunta 4 Actividad 1.png>)
 
 # Actividad 2
 **Observable** --> La tienda

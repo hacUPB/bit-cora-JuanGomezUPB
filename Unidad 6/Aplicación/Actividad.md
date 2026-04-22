@@ -28,3 +28,5 @@ Ya que Particle hereda de de la clase observer, al crear una nueva particula ("b
 4. Explica cómo aplicaste el patrón State a esta nueva partícula.
 
 El patrón State no juega un papel en la creación de la partícula, al menos no exclusivamente en ella. Funciona como con todas las particulas, definiendo su estado como "NormalState" al iniciarse (OnEnter) y cada vez que ocurra un evento.
+
+![alt text](<../Imágenes/Particula nueva.png>)
