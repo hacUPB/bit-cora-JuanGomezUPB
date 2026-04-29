@@ -1,0 +1,7 @@
+# Coevaluación Unidad 2
+# Estudiante: Juan Andres Armero Aguillon
+
+## Evidencias y pruebas
+4.0 - Hay evidencias y pruebas para todas las actividades, por lo que por el lado de las capturas de pantalla cumple perfectamente. Sin embargo, las explicaciones son muy cortas o poco profundas. Por ejemplo, en la actividad 2 aparece el código, pero no hay explicación de lo que sucede en él.
+## Repositorio y documentación
+4.0 - Todo esta guardado en un mismo archivo lo cual hace que sea fácil de leer. Además el código, las imágenes y el texto estan separadas claramente y pueden leerse. La estructura en cuanto a los textos explicativos podría ser un poco más clara, hay explicaciones (especialmente la de la actividad 6) que estan un poco desorganizadas, aún así el texto puedo leerse y se entiende perfectamente.

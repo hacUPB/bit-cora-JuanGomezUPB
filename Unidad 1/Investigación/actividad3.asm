@@ -1,0 +1,37 @@
+@SCREEN  //16384
+D=A
+@i
+M=D
+
+(READKEYBOARD)      //Etiquetas
+@KBD  //24576
+D=M
+@KEYPRESSED
+D;JNE //[IF NOT EQUAL TO 0] Si D=! 0, se salta a (KEYPRESSED) - línea 24
+@i
+D=M
+@SCREEN
+D=D-A
+@READKEYBOARD
+D;JLE
+@i
+M=M-1
+A=M
+M=0
+@READKEYBOARD
+0;JMP
+
+(KEYPRESSED)
+@i
+D=M
+@KBD
+D=D-A
+@READKEYBOARD
+D;JGE
+@16
+A=M
+M=-1
+@i
+M=M+1
+@READKEYBOARD
+0;JMP
