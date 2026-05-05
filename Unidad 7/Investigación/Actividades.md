@@ -16,3 +16,5 @@ Hicimos el proceso
 No funciono porque había un error con el linker
 
 Algo que anotar, es que una vez añadí todo tuve un error con el Linker (vinculador) y el main. Este error se dio porque no había pegado el código del triangle. El que pide al principio del enunciado. No había ni siquiera un main que correr, por eso mostraba el error.
+
+# Actividad 3
