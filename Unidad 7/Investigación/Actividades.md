@@ -74,33 +74,34 @@ Luego de estudiar las unidades 1 y 2 de este curso y ver el video, escribe con t
 
 La CPU puede realizar acciones secuencialmente. Es decir una tras otra. La GPU va a poder realizar acciones en simultaneo. Como en el ejemplo de Mythbusters, la CPU dibujaría algo punto por punto, mientras que la GPu tiene la capacidad de hacer un dibujo mucha más detallado al insante, poniendo varios puntos en simultaneo.
 
-1. ¿Cuáles son los tres pasos claves del pipeline de OpenGL? Explica en tus propias palabras cuál es el objetivo de cada paso.
+**1. ¿Cuáles son los tres pasos claves del pipeline de OpenGL? Explica en tus propias palabras cuál es el objetivo de cada paso.**
 
 PIPELINE: Vertex Shading --> Rasterization --> Fragment shading
 
-2. La gran novedad que introduce OpenGL moderno es el pipeline programable. ¿Qué significa esto? ¿Qué diferencia hay entre el pipeline fijo y el programable? ¿Qué ventajas le ves a esto? y si el pipeline es programable, ¿Qué tengo que programar?
+**2. La gran novedad que introduce OpenGL moderno es el pipeline programable. ¿Qué significa esto? ¿Qué diferencia hay entre el pipeline fijo y el programable? ¿Qué ventajas le ves a esto? y si el pipeline es programable, ¿Qué tengo que programar?**
 
 
 
-3. Si fueras a describir el proceso de rasterización ¿Qué dirías?
+**3. Si fueras a describir el proceso de rasterización ¿Qué dirías?**
 
 QuSe define que pixeles estan contenidos dentro de un triangulo en la pantalla. Luego, este "fragmento" se pinta del color del mismo.
 
-4. ¿Qué son los fragmentos? ¿Es lo mismo un fragmento que un pixel? ¿Por qué?
+**4. ¿Qué son los fragmentos? ¿Es lo mismo un fragmento que un pixel? ¿Por qué?**
 
 No, un fragmento es un triangulo y esta compuesto por los varios pixeles que funiconan como "relleno" del mismo triangulo.
 
-5. Explica qué problema resuelve el Z-buffer y ¿Qué es el depth test?
+**5. Explica qué problema resuelve el Z-buffer y ¿Qué es el depth test?**
 
 El z buffer corresponde a la distancia de los vertices con la camara. Los objetos más cercanos se sobreponen a los más lejanos. Los vertices más lejanos que esten "cubiertos" por los más cercanos desaparecen.
 
-6. ¿Por qué se presenta el problema de la aliasing? ¿Qué es el anti-aliasing?
+**6. ¿Por qué se presenta el problema de la aliasing? ¿Qué es el anti-aliasing?**
 
 Cuando las líneas de un triangulo pasan por el medio de un pixel, y teniendo en cuenta que por el proceso de rasterización todos los pixeles se colorean, es posible que el fragmento quede con bordes pixelados; a esto se le llama aliasing. EL anti-aliasing, diseñado para contrarrestar este efecto, consiste en dividir cada pixel en 16 partes, dependiendo de donde corte el triangulo, el pizel se pintara con una sombra más clara u oscura, de esta manaera, los bordes son más suaves y no se nota tanto el efecto del aliasing. 
 
-7. ¿Qué relación hay entre la iluminación y el fragment shader? Siempre es necesario tener en cuenta la iluminación en un fragment shader? o puedo hacer un fragment shader sin iluminación? Explica que implicaciones tiene esto.
+**7. ¿Qué relación hay entre la iluminación y el fragment shader? Siempre es necesario tener en cuenta la iluminación en un fragment shader? o puedo hacer un fragment shader sin iluminación? Explica que implicaciones tiene esto.**
 
 El fragment shader tiene una relación directa con la iluminación. Dependiendo de si el fragmento esta mirando directamente a la luz o si es perpendicular a ella será completamente claro u oscuro respectivamente. Es decir, no se puede definir la sombra de un objeto sin saber de donde proviene la luz o si no hay fuente de luz.
-8. ¿Qué implica para la GPU que una aplicación tenga múltiples fuentes de iluminación?
 
-para una GPU, que haya multiples fuetes de iluminación significa más calculos que hacer para cada fragmento. Para cada fuente de luz, hay que hacer un calculo propio. Por eso se limita el rango de influencia de las luces, para que no se den¿ba hacer un calculo de cada luz en el ambiente.
+**8. ¿Qué implica para la GPU que una aplicación tenga múltiples fuentes de iluminación?**
+
+Para una GPU, que haya multiples fuetes de iluminación significa más calculos que hacer para cada fragmento. Para cada fuente de luz, hay que hacer un calculo propio. Por eso se limita el rango de influencia de las luces, para que no se den¿ba hacer un calculo de cada luz en el ambiente.
