@@ -33,14 +33,19 @@ Algo que anotar, es que una vez añadí todo tuve un error con el Linker (vincul
 En esta unidad no profundizaremos en los tipos de primitivas, pero es importante que entiendas que OpenGL puede dibujar diferentes tipos de primitivas (triángulos, líneas, puntos, etc.).** *hacer esto rápido een clase*
 
 1. ¿Qué es el contexto OpenGL?
+
    Es el entorno donde se guarda todo el estado gráfico: 
 3. ¿Cuál es el rol de la biblioteca GLFW y qué ventaja tiene usarla?
+
    La biblioteca GLFW permite crear varias  bibiliotecas y contextos. OpenGL necesita un "taller" (como la analogía del taller de arte) donde trabajar, ahí entra en juego la biblioteca GLFW.
 5. ¿Por qué crees que OpenGL necesita un contexto (recuerda la analogía del taller de arte)?
+
    OpenGL necesita un contexto en el cual pueda trabajar. 
 7. ¿En últimas qué será el framebuffer y a qué te recuerda de las dos primeras unidades del curso?
+
    El framebuffer es similar a las dos primeras unidades en esos espacios de memoria de 16 bits *revisar bien los números de estos espacios y los nombres* que al llenarse (-1 o 1) se volvian negros esaparte de la pantalla. *(cambiar esta respuesta)*
 9. ¿Qué relación entre en el viewport y el framebuffer?
+
     El viewport define que parte del framebuffer se usara para dibujar, este tamaño suele coincidir con el tamaño completo del framebuffer.
 11. ¿En todo la analizado hasta ahora qué rol juega los drivers de la GPU y la GPU misma?
     
@@ -55,3 +60,47 @@ En esta unidad no profundizaremos en los tipos de primitivas, pero es importante
 21. En el ciclo principal (game loop) de OpenGL, notaste que en cada frame (cuadro) le decimos a openGL que use el shader program y el VAO. Si le indicas esto antes del game loop ¿Será necesario seguirlo haciendo en cada loop? Si no es necesario ¿En qué casos crees que esto puede ser útil?
     
 23. Finalmente, recuerda lo que hace glfwSwapBuffers(mainWindow); ¿Por qué crees que es importante? ¿Qué pasaría si no lo llamas? ¿Cómo explicas lo que pasa si no lo llamas? (experimenta)
+
+# Actividad 4
+**--> YOUTUBE: MIKE SHAH**
+--> Notebooklm.google.com --> Para tomar notas
+
+
+- ***Pipeliene:***
+    - Vertex Shading --> Rasterization --> Fragment shading
+
+
+Luego de estudiar las unidades 1 y 2 de este curso y ver el video, escribe con tus propias palabras ¿Cuál es la diferencia entre una CPU y una GPU?
+
+La CPU puede realizar acciones secuencialmente. Es decir una tras otra. La GPU va a poder realizar acciones en simultaneo. Como en el ejemplo de Mythbusters, la CPU dibujaría algo punto por punto, mientras que la GPu tiene la capacidad de hacer un dibujo mucha más detallado al insante, poniendo varios puntos en simultaneo.
+
+1. ¿Cuáles son los tres pasos claves del pipeline de OpenGL? Explica en tus propias palabras cuál es el objetivo de cada paso.
+
+PIPELINE: Vertex Shading --> Rasterization --> Fragment shading
+
+2. La gran novedad que introduce OpenGL moderno es el pipeline programable. ¿Qué significa esto? ¿Qué diferencia hay entre el pipeline fijo y el programable? ¿Qué ventajas le ves a esto? y si el pipeline es programable, ¿Qué tengo que programar?
+
+
+
+3. Si fueras a describir el proceso de rasterización ¿Qué dirías?
+
+QuSe define que pixeles estan contenidos dentro de un triangulo en la pantalla. Luego, este "fragmento" se pinta del color del mismo.
+
+4. ¿Qué son los fragmentos? ¿Es lo mismo un fragmento que un pixel? ¿Por qué?
+
+No, un fragmento es un triangulo y esta compuesto por los varios pixeles que funiconan como "relleno" del mismo triangulo.
+
+5. Explica qué problema resuelve el Z-buffer y ¿Qué es el depth test?
+
+El z buffer corresponde a la distancia de los vertices con la camara. Los objetos más cercanos se sobreponen a los más lejanos. Los vertices más lejanos que esten "cubiertos" por los más cercanos desaparecen.
+
+6. ¿Por qué se presenta el problema de la aliasing? ¿Qué es el anti-aliasing?
+
+Cuando las líneas de un triangulo pasan por el medio de un pixel, y teniendo en cuenta que por el proceso de rasterización todos los pixeles se colorean, es posible que el fragmento quede con bordes pixelados; a esto se le llama aliasing. EL anti-aliasing, diseñado para contrarrestar este efecto, consiste en dividir cada pixel en 16 partes, dependiendo de donde corte el triangulo, el pizel se pintara con una sombra más clara u oscura, de esta manaera, los bordes son más suaves y no se nota tanto el efecto del aliasing. 
+
+7. ¿Qué relación hay entre la iluminación y el fragment shader? Siempre es necesario tener en cuenta la iluminación en un fragment shader? o puedo hacer un fragment shader sin iluminación? Explica que implicaciones tiene esto.
+
+El fragment shader tiene una relación directa con la iluminación. Dependiendo de si el fragmento esta mirando directamente a la luz o si es perpendicular a ella será completamente claro u oscuro respectivamente. Es decir, no se puede definir la sombra de un objeto sin saber de donde proviene la luz o si no hay fuente de luz.
+8. ¿Qué implica para la GPU que una aplicación tenga múltiples fuentes de iluminación?
+
+para una GPU, que haya multiples fuetes de iluminación significa más calculos que hacer para cada fragmento. Para cada fuente de luz, hay que hacer un calculo propio. Por eso se limita el rango de influencia de las luces, para que no se den¿ba hacer un calculo de cada luz en el ambiente.
