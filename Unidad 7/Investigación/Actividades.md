@@ -32,34 +32,34 @@ Algo que anotar, es que una vez añadí todo tuve un error con el Linker (vincul
 **¿Qué pasa si cambias el primer parámetro de glDrawArrays a GL_LINES? ¿Qué pasa si lo cambias a GL_POINTS? ¿Qué pasa si cambias el tercer parámetro a 2? ¿Qué pasa si lo cambias a 4?
 En esta unidad no profundizaremos en los tipos de primitivas, pero es importante que entiendas que OpenGL puede dibujar diferentes tipos de primitivas (triángulos, líneas, puntos, etc.).** *hacer esto rápido een clase*
 
-1. ¿Qué es el contexto OpenGL?
+**1. ¿Qué es el contexto OpenGL?**
 
    Es el entorno donde se guarda todo el estado gráfico: 
-3. ¿Cuál es el rol de la biblioteca GLFW y qué ventaja tiene usarla?
+**2. ¿Cuál es el rol de la biblioteca GLFW y qué ventaja tiene usarla?**
 
    La biblioteca GLFW permite crear varias  bibiliotecas y contextos. OpenGL necesita un "taller" (como la analogía del taller de arte) donde trabajar, ahí entra en juego la biblioteca GLFW.
-5. ¿Por qué crees que OpenGL necesita un contexto (recuerda la analogía del taller de arte)?
+**3 ¿Por qué crees que OpenGL necesita un contexto (recuerda la analogía del taller de arte)?**
 
    OpenGL necesita un contexto en el cual pueda trabajar. 
-7. ¿En últimas qué será el framebuffer y a qué te recuerda de las dos primeras unidades del curso?
+**4. ¿En últimas qué será el framebuffer y a qué te recuerda de las dos primeras unidades del curso?**
 
    El framebuffer es similar a las dos primeras unidades en esos espacios de memoria de 16 bits *revisar bien los números de estos espacios y los nombres* que al llenarse (-1 o 1) se volvian negros esaparte de la pantalla. *(cambiar esta respuesta)*
-9. ¿Qué relación entre en el viewport y el framebuffer?
+**5. ¿Qué relación entre en el viewport y el framebuffer?**
 
     El viewport define que parte del framebuffer se usara para dibujar, este tamaño suele coincidir con el tamaño completo del framebuffer.
-11. ¿En todo la analizado hasta ahora qué rol juega los drivers de la GPU y la GPU misma?
+**6. ¿En todo la analizado hasta ahora qué rol juega los drivers de la GPU y la GPU misma?**
     
-13. ¿Por qué crees que sea necesario activar el VSync? ¿Si no lo activas y la imagen es estática qué crees que pase, y si es dinámica?
+**7. ¿Por qué crees que sea necesario activar el VSync? ¿Si no lo activas y la imagen es estática qué crees que pase, y si es dinámica?**
     
-15. En esta unidad estamos usando OpenGL moderno, pero ¿Qué es OpenGL Legacy? ¿Qué diferencias hay entre ambos?
+**8. En esta unidad estamos usando OpenGL moderno, pero ¿Qué es OpenGL Legacy? ¿Qué diferencias hay entre ambos?**
     
-17. ¿Qué es el shader program? ¿Por qué es importante en OpenGL moderno?
+**9. ¿Qué es el shader program? ¿Por qué es importante en OpenGL moderno?**
     
-19. Trata de revisar el código setupTriangle(), intuitivamente ¿Qué crees que hace? ¿Qué crees que es el VAO y el VBO?
+**10. Trata de revisar el código setupTriangle(), intuitivamente ¿Qué crees que hace? ¿Qué crees que es el VAO y el VBO?**
     
-21. En el ciclo principal (game loop) de OpenGL, notaste que en cada frame (cuadro) le decimos a openGL que use el shader program y el VAO. Si le indicas esto antes del game loop ¿Será necesario seguirlo haciendo en cada loop? Si no es necesario ¿En qué casos crees que esto puede ser útil?
+**11. En el ciclo principal (game loop) de OpenGL, notaste que en cada frame (cuadro) le decimos a openGL que use el shader program y el VAO. Si le indicas esto antes del game loop ¿Será necesario seguirlo haciendo en cada loop? Si no es necesario ¿En qué casos crees que esto puede ser útil?**
     
-23. Finalmente, recuerda lo que hace glfwSwapBuffers(mainWindow); ¿Por qué crees que es importante? ¿Qué pasaría si no lo llamas? ¿Cómo explicas lo que pasa si no lo llamas? (experimenta)
+**12. Finalmente, recuerda lo que hace glfwSwapBuffers(mainWindow); ¿Por qué crees que es importante? ¿Qué pasaría si no lo llamas? ¿Cómo explicas lo que pasa si no lo llamas? (experimenta)**
 
 # Actividad 4
 **--> YOUTUBE: MIKE SHAH**
