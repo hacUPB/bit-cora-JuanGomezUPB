@@ -119,6 +119,7 @@ Para una GPU, que haya multiples fuetes de iluminación significa más calculos 
 
 **1. Escribe un resumen en tus propias palabras de lo que se necesita para dibujar un triángulo en OpenGL.**
 Para poder dibujar un triangulo en OpenGL hay que tener un objeto, que en este caso es el contexto. Además necesitamos un VAO y un VBO que es donde se guardaron los datos y los atributos de los vertices respectivamente. Estos ultimos, los atributos, contienen la información necesaria para crear el triangulo, en este caso, la posición.
+
 **2. Escribe un resumen en tus propias palabras de lo que necesitas para poder usar un shader en OpenGL.**
 
 **Volvamos al asunto del `glVertexAttribPointer` ¿Recuerdas? Te prometí que lo retomaríamos. Pero ahora que ya sabes un poco más de OpenGL, te voy a proponer algo más. Supón que vas a definir un VBO con tres atributos y la idea es usar un shader diferente en cada draw call. Por ejemplo, el primer shader va a usar la posición, el segundo shader va a usar el color y el tercer shader va a usar el offset.**
