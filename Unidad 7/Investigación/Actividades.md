@@ -105,3 +105,14 @@ El fragment shader tiene una relación directa con la iluminación. Dependiendo 
 **8. ¿Qué implica para la GPU que una aplicación tenga múltiples fuentes de iluminación?**
 
 Para una GPU, que haya multiples fuetes de iluminación significa más calculos que hacer para cada fragmento. Para cada fuente de luz, hay que hacer un calculo propio. Por eso se limita el rango de influencia de las luces, para que no se den¿ba hacer un calculo de cada luz en el ambiente.
+
+***Notas***
+- **buffer:** espacio de almacenamiento temporal en la memoria física (RAM)
+- **Objetos en OpenGL:**  Entidades que represewntan recursos gráficos --> texturas, buffers de vertices, shaders, etc. *Son gestionados por la GPU*
+- Cada objeto tiene un identificador unico (ID) para que pueda ser referenciado.
+-**Contexto de OpenGL** == objeto
+- **VAO:** *objeto de OpenGL* que contiene los *atributos* de los vertices
+- **VBO:** *objeto de OpenGL* que contiene los *datos* de los vertices.
+- Los atributos de vértice son propiedades que describen cada vértice en un buffer de vértices. Estos atributos pueden incluir información como la posición, el color, las coordenadas de textura y las normales. Cada atributo tiene un índice único que se utiliza para referenciarlo en el shader. 
+- **NDC *(Coordenadas de disposisitvo normalizadas)*:** Se utiliza **en este caso**, *es decir no quiere decir que así sea en todos los caosos*, las coordenas van de -1 a 1 y así sabemos como definir los valores de los vertices.
+- En OpenGL moderno es obligatoria usar vertices. 
