@@ -115,4 +115,10 @@ Para una GPU, que haya multiples fuetes de iluminación significa más calculos 
 - **VBO:** *objeto de OpenGL* que contiene los *datos* de los vertices.
 - Los atributos de vértice son propiedades que describen cada vértice en un buffer de vértices. Estos atributos pueden incluir información como la posición, el color, las coordenadas de textura y las normales. Cada atributo tiene un índice único que se utiliza para referenciarlo en el shader. 
 - **NDC *(Coordenadas de disposisitvo normalizadas)*:** Se utiliza **en este caso**, *es decir no quiere decir que así sea en todos los caosos*, las coordenas van de -1 a 1 y así sabemos como definir los valores de los vertices.
-- En OpenGL moderno es obligatoria usar vertices. 
+- En OpenGL moderno es obligatorio usar shaders. 
+
+**1. Escribe un resumen en tus propias palabras de lo que se necesita para dibujar un triángulo en OpenGL.**
+Para poder dibujar un triangulo en OpenGL hay que tener un objeto, que en este caso es el contexto. Además necesitamos un VAO y un VBO que es donde se guardaron los datos y los atributos de los vertices respectivamente. Estos ultimos, los atributos, contienen la información necesaria para crear el triangulo, en este caso, la posición.
+**2. Escribe un resumen en tus propias palabras de lo que necesitas para poder usar un shader en OpenGL.**
+
+**Volvamos al asunto del `glVertexAttribPointer` ¿Recuerdas? Te prometí que lo retomaríamos. Pero ahora que ya sabes un poco más de OpenGL, te voy a proponer algo más. Supón que vas a definir un VBO con tres atributos y la idea es usar un shader diferente en cada draw call. Por ejemplo, el primer shader va a usar la posición, el segundo shader va a usar el color y el tercer shader va a usar el offset.**
