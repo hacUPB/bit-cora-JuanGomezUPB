@@ -128,10 +128,10 @@ Para poder dibujar un triangulo en OpenGL hay que tener un objeto, que en este c
 **Notas**
 - *Uniform:* 
 
-*1. Modifica el código del triángulo para que sea interactivo.*
-*2. Incluye una captura de pantalla del triángulo interactivo funcionando en tu máquina.*
+**1. Modifica el código del triángulo para que sea interactivo.**
+**2. Incluye una captura de pantalla del triángulo interactivo funcionando en tu máquina.**
 
-*Proceso 1 y 2*
+**Proceso 1 y 2**
 
 - El primer cambio notable es con el cambio de los shaders, el triangulo paso de ser color naranja a no tener color.
 ![alt text](../Imágenes/Actividad5-CambioConShaders.png) 
@@ -145,7 +145,7 @@ glUniform4f(colorLocation, x, y, 0.0f, 1.0f);
 
 ![alt text](../Imágenes/Actividad5-CambioDeLoop.jpeg) 
 
-*3. Explica el proceso de normalización de las coordenadas del mouse y cómo se relaciona con el sistema de coordenadas de OpenGL.*
+**3. Explica el proceso de normalización de las coordenadas del mouse y cómo se relaciona con el sistema de coordenadas de OpenGL.**
 
 ````
 // Normalizo las coordenadas del mouse
@@ -160,8 +160,13 @@ y > 1 ? y = 1 : y;
 Se define el ancho (SCR_WIDTH) y largo (SCR_HEIGHT) de la pantalla de 0 a 1 y se transforman estas coordenadas en la *posición x y y respectivamente*.
 
 
-*4. Explica el proceso de normalización a coordenadas de dispositivo (NDC) y cómo se relaciona con el sistema de coordenadas de OpenGL.*
+**4. Explica el proceso de normalización a coordenadas de dispositivo (NDC) y cómo se relaciona con el sistema de coordenadas de OpenGL.**
 
+````
 glUniform2f(offsetLocation, x*2 - 1, 1 - y*2);
 glBindVertexArray(VAO);glDrawArrays(GL_TRIANGLES, 0, 3);
+````
 
+- Definición de NDC: "En OpenGL, los vértices se definen en un espacio de coordenadas de dispositivo normalizadas (NDC). Esto significa que las coordenadas van de -1 a 1."
+
+La primera línea de código transforma las coordenadas en NDC y la segunda línea las envía  al shader como un uniform para luego ser dibujadas.
