@@ -136,15 +136,15 @@ Para poder dibujar un triangulo en OpenGL hay que tener un objeto, que en este c
 - El primer cambio notable es con el cambio de los shaders, el triangulo paso de ser color naranja a no tener color.
 ![alt text](../Imágenes/Actividad5-CambioConShaders.png) 
 - Se actualizo el loop de renderizado y el triangulo siguio la dirección del mouse. Además se envió color al triangulo: 
-		
+	````	
       // Envio el color y la posición del triángulo
 		float color[] = { x, y, 0.0f, 1.0f };
 		glUniform4f(colorLocation, x, y, 0.0f, 1.0f);
-
+````
 ![alt text](../Imágenes/Actividad5-CambioDeLoop.jpeg) 
 
 *3. Explica el proceso de normalización de las coordenadas del mouse y cómo se relaciona con el sistema de coordenadas de OpenGL.*
-
+````
 // Normalizo las coordenadas del mouse
 float x = (float)xpos / (float)SCR_WIDTH;
 x < 0 ? x = 0 : x;
@@ -152,7 +152,7 @@ x > 1 ? x = 1 : x;
 float y = (float)ypos / (float)SCR_HEIGHT;
 y < 0 ? y = 0 : y;
 y > 1 ? y = 1 : y;
-
+````
 Se define el ancho (SCR_WIDTH) y largo (SCR_HEIGHT) de la pantalla de 0 a 1 y se transforman estas coordenadas en la *posición x y y respectivamente*.
 
 
