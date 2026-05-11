@@ -123,3 +123,24 @@ Para poder dibujar un triangulo en OpenGL hay que tener un objeto, que en este c
 **2. Escribe un resumen en tus propias palabras de lo que necesitas para poder usar un shader en OpenGL.**
 
 **Volvamos al asunto del `glVertexAttribPointer` ¿Recuerdas? Te prometí que lo retomaríamos. Pero ahora que ya sabes un poco más de OpenGL, te voy a proponer algo más. Supón que vas a definir un VBO con tres atributos y la idea es usar un shader diferente en cada draw call. Por ejemplo, el primer shader va a usar la posición, el segundo shader va a usar el color y el tercer shader va a usar el offset.**
+
+# Actividad 5
+**Notas**
+- *Uniform:* 
+
+*1. Modifica el código del triángulo para que sea interactivo.*
+*2. Incluye una captura de pantalla del triángulo interactivo funcionando en tu máquina.*
+
+*Proceso 1 y 2*
+
+- El primer cambio notable es con el cambio de los shaders, el triangulo paso de ser color naranja a no tener color.
+
+- Se actualizo el loop de renderizado y el triangulo siguio la dirección del mouse. Además se envió color al triangulo: 
+		
+      // Envio el color y la posición del triángulo
+		float color[] = { x, y, 0.0f, 1.0f };
+		glUniform4f(colorLocation, x, y, 0.0f, 1.0f);
+*(Poner imágen de actualización del loop)*
+
+*3. Explica el proceso de normalización de las coordenadas del mouse y cómo se relaciona con el sistema de coordenadas de OpenGL.*
+*4. Explica el proceso de normalización a coordenadas de dispositivo (NDC) y cómo se relaciona con el sistema de coordenadas de OpenGL.*
