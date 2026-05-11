@@ -137,10 +137,10 @@ Para poder dibujar un triangulo en OpenGL hay que tener un objeto, que en este c
 ![alt text](../Imágenes/Actividad5-CambioConShaders.png) 
 - Se actualizo el loop de renderizado y el triangulo siguio la dirección del mouse. Además se envió color al triangulo:
 
-	````	
-      // Envio el color y la posición del triángulo
-		float color[] = { x, y, 0.0f, 1.0f };
-		glUniform4f(colorLocation, x, y, 0.0f, 1.0f);
+````	
+// Envio el color y la posición del triángulo
+float color[] = { x, y, 0.0f, 1.0f };
+glUniform4f(colorLocation, x, y, 0.0f, 1.0f);
 ````
 
 ![alt text](../Imágenes/Actividad5-CambioDeLoop.jpeg) 
